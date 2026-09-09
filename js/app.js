@@ -268,11 +268,11 @@ musicProgress.addEventListener("input", () => {
 
 // Preparado para varias canciones: agrega archivos al array cuando quieras.
 const tracks = [
-  { src: "assets/audio/music.mp3", title: "Suisui Story Theme", artist: "Wuthering Waves • 3.5 OST" },
-  { src: "assets/audio/music-04.mp3", title: "A Fairy Tale", artist: "Wuthering Waves • OST" },
-  { src: "assets/audio/music-03.mp3", title: "When Spring Returns", artist: "Yxelixi • Official" },
+  { src: "assets/audio/music.mp3", title: "Suisui Story Theme", artist: "Wuthering Waves • 3.5 OST"},
+  { src: "assets/audio/music-04.mp3", title: "A Fairy Tale", artist: "Wuthering Waves • OST"},
+  { src: "assets/audio/music-03.mp3", title: "When Spring Returns", artist: "Yxelixi • Official"},
   { src: "assets/audio/music-02.mp3", title: "Suisui Hunting Theme", artist: "Wuthering Waves • 3.5 OST" },
-  { src: "assets/audio/music-05.mp3", title: "Thawing Fates", artist: "Wuthering Waves • EP 1.1" }
+  { src: "assets/audio/music-05.mp3", title: "Thawing Fates", artist: "Wuthering Waves • EP 1.1" },
   { src: "assets/audio/music-06.mp3", title: "A Million Possibilities", artist: "Wuthering Waves • EP 1.4" }
 ];
 let trackIndex = 0;
