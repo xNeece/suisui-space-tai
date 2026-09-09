@@ -3056,3 +3056,1014 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .item-card::before, .item-card::after { transition: none; }
 }
+
+/* =========================================================
+ *  V4.0 — SUISUI PROFILE WEBM EXPANSION
+ *  WEBM protagonista + tipografía japonesa + energía
+ *  ========================================================= */
+
+/* El perfil vuelve a permitir que la composición respire. */
+.hero-panel {
+  overflow: visible;
+  grid-template-columns: minmax(225px, .55fr) minmax(0, 2.45fr);
+  column-gap: 0;
+}
+
+/* El escenario del WEBM gana prácticamente toda la zona derecha. */
+.hero-panel .profile-video-wrap {
+  position: relative;
+  z-index: 3;
+  width: 108%;
+  height: 108%;
+  min-width: 0;
+  min-height: 0;
+  margin-left: -4%;
+  padding: 0;
+  align-self: center;
+  justify-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+/* El halo acompaña al nuevo tamaño. */
+.hero-panel .profile-video-glow {
+  position: absolute;
+  z-index: 0;
+  inset: 15% 8% 8%;
+  width: auto;
+  height: auto;
+  border-radius: 50%;
+  background:
+  radial-gradient(
+    circle,
+    rgba(166,239,229,.20) 0%,
+                  rgba(116,211,204,.10) 35%,
+                  transparent 72%
+  );
+  filter: blur(48px);
+  animation: profileVideoGlowV4 6s ease-in-out infinite;
+}
+
+/* El frame sigue siendo completamente transparente. */
+.hero-panel .profile-video-frame {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+/* Eliminamos cualquier decoración del antiguo marco. */
+.hero-panel .profile-video-frame::before,
+.hero-panel .profile-video-frame::after {
+  display: none;
+}
+
+/* WEBM grande, limpio y sin fondo. */
+.hero-panel .profile-video {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center center;
+  background: transparent;
+  filter:
+  saturate(.98)
+  contrast(1.035)
+  drop-shadow(0 24px 42px rgba(0,0,0,.28));
+}
+
+/* ---------------------------------------------------------
+ *  TIPOGRAFÍA JAPONESA DEL PERFIL
+ *  --------------------------------------------------------- */
+
+/* Kanjis principales: ahora se desplazan claramente
+ *  hacia el extremo derecho del escenario. */
+.hero-panel > .jp-profile-main {
+  z-index: 4;
+  right: 2.8%;
+  top: 8%;
+  font-size: clamp(34px, 3.2vw, 52px);
+  line-height: 1.12;
+  letter-spacing: .18em;
+  color: rgba(183,242,235,.20);
+  text-shadow:
+  0 0 14px rgba(157,232,223,.10),
+  0 0 34px rgba(157,232,223,.045);
+  opacity: .95;
+}
+
+/* Segunda columna japonesa dorada. */
+.hero-panel > .jp-profile-kanji {
+  z-index: 4;
+  right: .8%;
+  top: 17%;
+  font-size: clamp(21px, 1.7vw, 29px);
+  line-height: 1.4;
+  letter-spacing: .2em;
+  color: rgba(224,194,118,.23);
+  text-shadow:
+  0 0 12px rgba(213,178,91,.10),
+  0 0 28px rgba(213,178,91,.045);
+}
+
+/* Texto horizontal largo para llenar elegantemente
+ *  la parte inferior derecha. */
+.hero-panel > .jp-profile-extra {
+  z-index: 4;
+  right: 5%;
+  bottom: 7%;
+  font-size: clamp(10px, .82vw, 13px);
+  letter-spacing: .20em;
+  color: rgba(179,239,232,.18);
+  text-shadow: 0 0 13px rgba(157,232,223,.08);
+}
+
+/* Texto pequeño adicional junto al borde inferior. */
+.hero-panel > .jp-profile-mini {
+  z-index: 4;
+  left: auto;
+  right: 19%;
+  bottom: 3.5%;
+  font-size: 10px;
+  letter-spacing: .18em;
+  color: rgba(213,178,91,.30);
+}
+
+/* Las líneas pasan detrás de los efectos. */
+.hero-panel > .decor-line-profile-a,
+.hero-panel > .decor-line-profile-b {
+  z-index: 2;
+}
+
+/* ---------------------------------------------------------
+ *  CAPA DE EFECTOS SOBRE EL WEBM
+ *  --------------------------------------------------------- */
+
+.profile-video-effects {
+  position: absolute;
+  z-index: 6;
+  inset: 4% 2% 4% 0;
+  pointer-events: none;
+  overflow: visible;
+}
+
+/* Partículas */
+.profile-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(203,251,246,.95);
+  box-shadow:
+  0 0 6px rgba(157,232,223,.95),
+  0 0 15px rgba(157,232,223,.55),
+  0 0 28px rgba(157,232,223,.22);
+  opacity: 0;
+  animation: profileParticleV4 4.8s ease-in-out infinite;
+}
+
+.profile-particle.p1 {
+  left: 14%;
+  top: 66%;
+  animation-delay: -.7s;
+  transform: scale(.7);
+}
+
+.profile-particle.p2 {
+  left: 25%;
+  top: 31%;
+  animation-delay: -2.1s;
+  transform: scale(1.15);
+}
+
+.profile-particle.p3 {
+  left: 39%;
+  top: 18%;
+  animation-delay: -3.2s;
+  transform: scale(.65);
+}
+
+.profile-particle.p4 {
+  left: 54%;
+  top: 71%;
+  animation-delay: -1.5s;
+  transform: scale(.85);
+}
+
+.profile-particle.p5 {
+  left: 68%;
+  top: 39%;
+  animation-delay: -3.8s;
+  transform: scale(1.2);
+}
+
+.profile-particle.p6 {
+  left: 79%;
+  top: 59%;
+  animation-delay: -2.7s;
+  transform: scale(.7);
+}
+
+.profile-particle.p7 {
+  left: 88%;
+  top: 25%;
+  animation-delay: -4.2s;
+  transform: scale(.55);
+}
+
+.profile-particle.p8 {
+  left: 47%;
+  top: 84%;
+  animation-delay: -1.1s;
+  transform: scale(.55);
+}
+
+/* Destellos en forma de estrella */
+.profile-spark {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  opacity: 0;
+  animation: profileSparkV4 3.8s ease-in-out infinite;
+}
+
+.profile-spark::before,
+.profile-spark::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 999px;
+  background: rgba(210,250,245,.92);
+  box-shadow: 0 0 10px rgba(157,232,223,.75);
+}
+
+.profile-spark::before {
+  width: 2px;
+  height: 15px;
+}
+
+.profile-spark::after {
+  width: 15px;
+  height: 2px;
+}
+
+.profile-spark.s1 {
+  left: 31%;
+  top: 24%;
+  animation-delay: -1.4s;
+}
+
+.profile-spark.s2 {
+  left: 71%;
+  top: 67%;
+  transform: scale(.72);
+  animation-delay: -3s;
+}
+
+.profile-spark.s3 {
+  left: 83%;
+  top: 42%;
+  transform: scale(.55);
+  animation-delay: -2.2s;
+}
+
+/* ---------------------------------------------------------
+ *  RAYOS / DESCARGAS DE ENERGÍA
+ *  --------------------------------------------------------- */
+
+.profile-lightning {
+  position: absolute;
+  width: 90px;
+  height: 145px;
+  opacity: 0;
+  filter:
+  drop-shadow(0 0 5px rgba(157,232,223,.95))
+  drop-shadow(0 0 16px rgba(157,232,223,.45));
+  animation: profileLightningV4 4.2s ease-in-out infinite;
+}
+
+.profile-lightning::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  clip-path: polygon(
+    52% 0%,
+    38% 28%,
+    50% 28%,
+    27% 57%,
+    43% 57%,
+    20% 100%,
+    67% 49%,
+    52% 49%,
+    77% 18%,
+    60% 18%
+  );
+  background:
+  linear-gradient(
+    180deg,
+    rgba(219,255,249,.95),
+                  rgba(115,218,211,.72) 55%,
+                  rgba(157,232,223,.15)
+  );
+}
+
+/* Primer rayo */
+.profile-lightning.l1 {
+  left: 42%;
+  top: 13%;
+  transform: rotate(-17deg) scale(.72);
+  animation-delay: -1.2s;
+}
+
+/* Segundo rayo */
+.profile-lightning.l2 {
+  left: 66%;
+  top: 48%;
+  transform: rotate(28deg) scale(.48);
+  animation-delay: -3.1s;
+}
+
+/* Una pequeña descarga lateral */
+.profile-lightning.l3 {
+  left: 23%;
+  top: 58%;
+  transform: rotate(-52deg) scale(.36);
+  animation-delay: -2.4s;
+}
+
+/* ---------------------------------------------------------
+ *  LÍNEAS DE ENERGÍA
+ *  --------------------------------------------------------- */
+
+.profile-energy-line {
+  position: absolute;
+  height: 1px;
+  transform-origin: left center;
+  background:
+  linear-gradient(
+    90deg,
+    transparent,
+    rgba(157,232,223,.85),
+                  rgba(224,249,244,.55),
+                  transparent
+  );
+  box-shadow:
+  0 0 8px rgba(157,232,223,.55),
+  0 0 18px rgba(157,232,223,.20);
+  opacity: 0;
+  animation: profileEnergyLineV4 5.5s ease-in-out infinite;
+}
+
+.profile-energy-line.e1 {
+  width: 145px;
+  left: 19%;
+  top: 39%;
+  transform: rotate(-17deg);
+  animation-delay: -1.7s;
+}
+
+.profile-energy-line.e2 {
+  width: 105px;
+  left: 57%;
+  top: 76%;
+  transform: rotate(13deg);
+  animation-delay: -3.5s;
+}
+
+@keyframes profileVideoGlowV4 {
+  0%, 100% {
+    opacity: .48;
+    transform: scale(.92);
+  }
+  50% {
+    opacity: .88;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes profileParticleV4 {
+  0%, 100% {
+    opacity: 0;
+    transform: translate3d(0, 12px, 0) scale(.55);
+  }
+  25% {
+    opacity: .45;
+  }
+  55% {
+    opacity: 1;
+    transform: translate3d(8px, -8px, 0) scale(1);
+  }
+  80% {
+    opacity: .35;
+  }
+}
+
+@keyframes profileSparkV4 {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(.45) rotate(0deg);
+  }
+  45% {
+    opacity: .25;
+  }
+  55% {
+    opacity: 1;
+    transform: scale(1) rotate(45deg);
+  }
+  70% {
+    opacity: .15;
+  }
+}
+
+@keyframes profileLightningV4 {
+  0%, 100% {
+    opacity: 0;
+  }
+  42% {
+    opacity: 0;
+  }
+  47% {
+    opacity: .95;
+  }
+  50% {
+    opacity: .18;
+  }
+  53% {
+    opacity: .8;
+  }
+  58% {
+    opacity: 0;
+  }
+}
+
+@keyframes profileEnergyLineV4 {
+  0%, 100% {
+    opacity: 0;
+    transform-origin: left center;
+    scale: .65;
+  }
+  48% {
+    opacity: 0;
+  }
+  55% {
+    opacity: .65;
+    scale: 1;
+  }
+  70% {
+    opacity: 0;
+    scale: 1.08;
+  }
+}
+
+/* ---------------------------------------------------------
+ *  RESPONSIVE
+ *  --------------------------------------------------------- */
+
+@media (max-width: 900px) {
+  .hero-panel {
+    grid-template-columns: minmax(190px, .62fr) minmax(0, 1.78fr);
+    column-gap: 0;
+  }
+
+  .hero-panel .profile-video-wrap {
+    width: 105%;
+    margin-left: -3%;
+  }
+
+  .hero-panel > .jp-profile-main {
+    right: 2%;
+    top: 8%;
+    font-size: 31px;
+  }
+
+  .hero-panel > .jp-profile-kanji {
+    right: .5%;
+    top: 18%;
+    font-size: 19px;
+  }
+
+  .hero-panel > .jp-profile-extra {
+    right: 4%;
+    bottom: 7%;
+    font-size: 9px;
+  }
+
+  .profile-lightning.l3,
+  .profile-energy-line.e2 {
+    display: none;
+  }
+}
+
+@media (max-width: 650px) {
+  .hero-panel {
+    grid-template-columns: 1fr;
+    row-gap: 0;
+    overflow: hidden;
+  }
+
+  .hero-panel .profile-video-wrap {
+    width: 100%;
+    height: 430px;
+    min-height: 430px;
+    margin-left: 0;
+  }
+
+  .hero-panel .profile-video-glow {
+    inset: 14% 8% 8%;
+  }
+
+  .hero-panel > .jp-profile-main {
+    right: 5%;
+    top: 8%;
+    font-size: 24px;
+  }
+
+  .hero-panel > .jp-profile-kanji {
+    right: 2%;
+    top: 19%;
+    font-size: 14px;
+  }
+
+  .hero-panel > .jp-profile-extra {
+    right: 7%;
+    bottom: 8%;
+    font-size: 7px;
+  }
+
+  .hero-panel > .jp-profile-mini {
+    right: 15%;
+    bottom: 4%;
+    font-size: 8px;
+  }
+
+  .profile-particle {
+    width: 3px;
+    height: 3px;
+  }
+
+  .profile-lightning {
+    transform: scale(.62);
+  }
+
+  .profile-lightning.l1 {
+    left: 38%;
+  }
+
+  .profile-lightning.l2 {
+    left: 63%;
+  }
+
+  .profile-energy-line {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-video-glow,
+  .profile-particle,
+  .profile-spark,
+  .profile-lightning,
+  .profile-energy-line {
+    animation: none !important;
+    opacity: .35;
+  }
+}
+/* =========================================================
+ *   V4.1 — TEXTO DEL PERFIL POR ENCIMA DEL WEBM
+ *   ========================================================= */
+
+/* Todo el contenido principal de texto queda delante del WEBM. */
+.hero-panel .hero-copy {
+  position: relative;
+  z-index: 10;
+}
+
+/* El texto decorativo japonés también queda por encima. */
+.hero-panel > .jp-profile-main,
+.hero-panel > .jp-profile-side,
+.hero-panel > .jp-profile-mini,
+.hero-panel > .jp-profile-extra,
+.hero-panel > .jp-profile-kanji {
+  z-index: 11;
+}
+
+/* Las líneas decorativas permanecen debajo del texto. */
+.hero-panel > .decor-line-profile-a,
+.hero-panel > .decor-line-profile-b {
+  z-index: 2;
+}
+
+/* El WEBM queda por debajo de todo el contenido textual. */
+.hero-panel .profile-video-wrap {
+  z-index: 4;
+}
+
+/* Pero los efectos creados sobre el WEBM siguen encima del propio vídeo. */
+.hero-panel .profile-video-effects {
+  z-index: 12;
+}
+
+/* El label MOMENT / LOOP también queda sobre el vídeo. */
+.hero-panel .profile-video-label {
+  z-index: 13;
+}
+/* =========================================================
+ *  V4.3 — WEBM GRANDE SIN ALTERAR EL LAYOUT
+ *  ========================================================= */
+
+.hero-panel .profile-video-wrap {
+  position: absolute !important;
+
+  /* Mantiene el WEBM dentro del perfil */
+  left: 8% !important;
+  top: 50% !important;
+
+  width: 46% !important;
+  height: 88% !important;
+
+  transform: translateY(-50%) !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+
+  overflow: visible !important;
+
+  z-index: 4 !important;
+}
+
+.hero-panel .profile-video-frame {
+  width: 100% !important;
+  height: 100% !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+
+  overflow: visible !important;
+}
+
+.hero-panel .profile-video {
+  width: 135% !important;
+  height: 135% !important;
+
+  max-width: none !important;
+  max-height: none !important;
+
+  object-fit: contain !important;
+
+  background: transparent !important;
+
+  border: 0 !important;
+  outline: none !important;
+
+  filter:
+  drop-shadow(0 0 12px rgba(90, 220, 255, .20))
+  drop-shadow(0 0 28px rgba(90, 160, 255, .12));
+}
+
+/* Brillo circular detrás del personaje */
+.hero-panel .profile-video-glow {
+  position: absolute !important;
+
+  width: 72% !important;
+  height: 72% !important;
+
+  left: 50% !important;
+  top: 50% !important;
+
+  transform: translate(-50%, -50%) !important;
+
+  border-radius: 50% !important;
+
+  background:
+  radial-gradient(
+    circle,
+    rgba(100, 220, 255, .16) 0%,
+                  rgba(100, 180, 255, .08) 35%,
+                  transparent 72%
+  ) !important;
+
+  filter: blur(12px);
+
+  pointer-events: none;
+
+  z-index: 0 !important;
+}
+
+/* Efectos siguen acompañando al WEBM */
+.hero-panel .profile-video-effects {
+  position: absolute !important;
+  inset: -10% !important;
+  z-index: 12 !important;
+  pointer-events: none !important;
+}
+
+/* TODO el texto del perfil queda por encima */
+.hero-panel .hero-copy {
+  position: relative !important;
+  z-index: 20 !important;
+}
+
+.hero-panel > .jp-profile-main,
+.hero-panel > .jp-profile-side,
+.hero-panel > .jp-profile-mini,
+.hero-panel > .jp-profile-extra,
+.hero-panel > .jp-profile-kanji {
+  z-index: 21 !important;
+}
+
+/* El texto MOMENT también queda visible */
+.hero-panel .profile-video-label {
+  z-index: 22 !important;
+}
+/* =========================================================
+ *  V4.3.1 — WEBM AL CENTRO/DERECHA + TEXTO A LA IZQUIERDA
+ *  ========================================================= */
+
+/* El texto permanece en su posición natural */
+.hero-panel .hero-copy {
+  position: relative !important;
+  left: auto !important;
+  top: auto !important;
+  transform: none !important;
+  width: auto !important;
+  height: auto !important;
+  margin: 0 !important;
+  z-index: 20 !important;
+}
+
+/* SOLO desplazamos horizontalmente el WEBM.
+ *  No tocamos tamaño ni altura. */
+.hero-panel .profile-video-wrap {
+  left: 37% !important;
+  top: 50% !important;
+  width: 46% !important;
+  height: 88% !important;
+  transform: translateY(-50%) !important;
+  z-index: 4 !important;
+}
+
+/* Mantener exactamente el tamaño del render de V4.3 */
+.hero-panel .profile-video {
+  width: 135% !important;
+  height: 135% !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: contain !important;
+}
+
+/* Texto siempre delante */
+.hero-panel .hero-copy,
+.hero-panel .hero-copy h2,
+.hero-panel .hero-copy .section-kicker,
+.hero-panel .hero-copy .quote,
+.hero-panel .hero-copy .title-stars,
+.hero-panel .hero-copy .tags {
+  z-index: 20 !important;
+}
+
+/* Decoración japonesa */
+.hero-panel > .jp-profile-main,
+.hero-panel > .jp-profile-side,
+.hero-panel > .jp-profile-mini,
+.hero-panel > .jp-profile-extra,
+.hero-panel > .jp-profile-kanji {
+  z-index: 21 !important;
+}
+
+/* Efectos del WEBM */
+.hero-panel .profile-video-effects {
+  z-index: 12 !important;
+}
+
+.hero-panel .profile-video-label {
+  z-index: 22 !important;
+}
+/* ---------------------------------------------------------
+ *  MÓVIL
+ *  --------------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+  .hero-panel .profile-video-wrap {
+    left: 0 !important;
+    top: 45% !important;
+
+    width: 65% !important;
+    height: 62% !important;
+
+    transform: translateY(-50%) !important;
+  }
+
+  .hero-panel .profile-video {
+    width: 120% !important;
+    height: 120% !important;
+  }
+}
+
+/* ---------------------------------------------------------
+ *  BRILLO CIRCULAR DETRÁS DEL PERSONAJE
+ *  --------------------------------------------------------- */
+
+.hero-panel .profile-video-glow {
+  position: absolute;
+
+  width: 82%;
+  height: 82%;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  background:
+  radial-gradient(
+    circle,
+    rgba(110, 220, 255, .18) 0%,
+                  rgba(100, 180, 255, .10) 28%,
+                  rgba(90, 140, 255, .045) 48%,
+                  transparent 72%
+  );
+
+  filter: blur(10px);
+
+  z-index: 0;
+}
+
+/* ---------------------------------------------------------
+ *  EFECTOS
+ *  --------------------------------------------------------- */
+
+.hero-panel .profile-video-effects {
+  position: absolute;
+
+  inset: -12%;
+
+  z-index: 12;
+
+  pointer-events: none;
+
+  border-radius: 50%;
+}
+
+/* ---------------------------------------------------------
+ *  TEXTO — SEPARADO DEL WEBM
+ *  --------------------------------------------------------- */
+
+.hero-panel .hero-copy {
+  position: relative;
+
+  z-index: 20;
+
+  /*
+   *    Reservamos claramente la parte derecha.
+   */
+  grid-column: 2;
+
+  pointer-events: none;
+}
+
+/*
+ *  Todos los textos japoneses también permanecen
+ *  completamente por encima.
+ */
+
+.hero-panel > .jp-profile-main,
+.hero-panel > .jp-profile-side,
+.hero-panel > .jp-profile-mini,
+.hero-panel > .jp-profile-extra,
+.hero-panel > .jp-profile-kanji {
+  z-index: 21;
+}
+
+/* ---------------------------------------------------------
+ *  LABEL DEL WEBM
+ *  --------------------------------------------------------- */
+
+.hero-panel .profile-video-label {
+  position: absolute;
+
+  z-index: 22;
+
+  bottom: 2%;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  white-space: nowrap;
+}
+
+/* ---------------------------------------------------------
+ *  DECORACIÓN CIRCULAR
+ *  --------------------------------------------------------- */
+
+.hero-panel::after {
+  content: "";
+
+  position: absolute;
+
+  width: min(43%, 390px);
+  aspect-ratio: 1;
+
+  left: 4%;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  border-radius: 50%;
+
+  border:
+  1px solid rgba(130, 220, 255, .10);
+
+  box-shadow:
+  0 0 35px rgba(90, 190, 255, .07),
+  inset 0 0 35px rgba(90, 190, 255, .035);
+
+  pointer-events: none;
+
+  z-index: 2;
+}
+
+/* ---------------------------------------------------------
+ *  RESPONSIVE
+ *  --------------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+  .hero-panel .profile-video-wrap {
+    width: 62%;
+    height: 82%;
+
+    left: -8%;
+  }
+
+  .hero-panel .profile-video {
+    width: 120%;
+    height: 120%;
+  }
+
+  .hero-panel::after {
+    width: 46%;
+    left: 1%;
+  }
+}
+
+@media (max-width: 700px) {
+
+  .hero-panel .profile-video-wrap {
+    width: 78%;
+    height: 62%;
+
+    left: -14%;
+    top: 42%;
+  }
+
+  .hero-panel .profile-video {
+    width: 112%;
+    height: 112%;
+  }
+
+  .hero-panel::after {
+    width: 58%;
+    left: -4%;
+    top: 43%;
+  }
+}
+/* =========================================================
+ *  V4.3.2 — TEXTO MUCHO MÁS A LA IZQUIERDA
+ *  ========================================================= */
+
+/* NO tocar el WEBM.
+ *  Solo desplazamos el bloque de texto hacia la izquierda. */
+.hero-panel .hero-copy {
+  position: relative !important;
+  left: -227px !important;
+  top: auto !important;
+  transform: none !important;
+  z-index: 20 !important;
+}

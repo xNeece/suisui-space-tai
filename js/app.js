@@ -444,3 +444,49 @@ syncMusicUI();
     item.addEventListener('pointerleave', resetGloss);
   });
 })();
+/* =========================================================
+ V 4*.0 — efectos del WEBM del perfil
+ Partículas + destellos + rayos + líneas de energía
+ ========================================================= */
+(() => {
+  const profileWrap = document.querySelector(".profile-video-wrap");
+
+  if (!profileWrap) return;
+
+  // Evita duplicar los efectos si el script se carga más de una vez.
+  if (profileWrap.querySelector(".profile-video-effects")) return;
+
+  const effects = document.createElement("div");
+  effects.className = "profile-video-effects";
+  effects.setAttribute("aria-hidden", "true");
+
+  // Partículas.
+  for (let i = 1; i <= 8; i++) {
+    const particle = document.createElement("span");
+    particle.className = `profile-particle p${i}`;
+    effects.appendChild(particle);
+  }
+
+  // Destellos.
+  for (let i = 1; i <= 3; i++) {
+    const spark = document.createElement("span");
+    spark.className = `profile-spark s${i}`;
+    effects.appendChild(spark);
+  }
+
+  // Rayos.
+  for (let i = 1; i <= 3; i++) {
+    const lightning = document.createElement("span");
+    lightning.className = `profile-lightning l${i}`;
+    effects.appendChild(lightning);
+  }
+
+  // Líneas de energía.
+  for (let i = 1; i <= 2; i++) {
+    const line = document.createElement("span");
+    line.className = `profile-energy-line e${i}`;
+    effects.appendChild(line);
+  }
+
+  profileWrap.appendChild(effects);
+})();
