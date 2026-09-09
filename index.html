@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07151d">
+  <title>SuiSui • Xatspace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Xat suele reservar/ocupar la parte superior con publicidad. -->
+  <div class="xat-safe-top" aria-hidden="true"></div>
+
+  <!-- INTRO -->
+  <section id="intro" class="intro-screen">
+    <video id="introVideo" class="intro-video" autoplay muted loop playsinline preload="auto">
+      <source src="assets/video/intro.mp4" type="video/mp4">
+    </video>
+    <div class="intro-fallback"></div>
+    <div class="intro-vignette"></div>
+    <div class="intro-content">
+      <div class="sigil">✦</div>
+      <p class="eyebrow">ID 90391591 / TAI</p>
+      <h1>Welcome</h1>
+      <p class="intro-subtitle">May peace and plenty bless this land for good.</p>
+      <button id="enterButton" class="enter-button" type="button" aria-label="Entrar al perfil de SuiSui">
+        <span>Enter</span>
+        <i>↗</i>
+      </button>
+      <p class="intro-hint"> Perfect timing, darling.</p>
+    </div>
+    <div class="intro-corner intro-corner-left">SUISUI / 01</div>
+    <div class="intro-corner intro-corner-right">ONLINE</div>
+  </section>
+
+  <!-- APP -->
+  <main id="app" class="app is-hidden">
+    <div class="ambient"></div>
+    <div class="stars" id="stars"></div>
+    <div class="aurora aurora-a"></div>
+    <div class="aurora aurora-b"></div>
+
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark"><img src="assets/images/suisui-icon.png" alt="SuiSui"></div>
+        <div>
+          <span class="brand-kicker">CHARACTER PROFILE</span>
+          <strong>SuiSui</strong>
+        </div>
+      </div>
+
+      <div class="topbar-center">
+        <span id="onlineText">Status:<i class="status-inline-dot" aria-hidden="true"></i> Online</span>
+        <span class="divider"></span>
+        <span id="liveDate">--</span>
+      </div>
+
+      <div class="top-actions">
+        <div class="music-control">
+          <button class="mini-button" id="musicToggle" type="button" aria-label="Abrir reproductor de música" aria-expanded="false">♫</button>
+          <div class="music-popover" id="musicPopover" aria-hidden="true">
+            <div class="vinyl-wrap"><div class="vinyl"><span></span></div></div>
+            <div class="music-info">
+              <span class="music-label">NOW PLAYING</span>
+              <strong id="trackTitle">Tu música aquí</strong>
+              <small id="trackArtist">SuiSui • Personal Space</small>
+              <div class="progress-row"><span id="currentTime">0:00</span><input id="musicProgress" type="range" min="0" max="100" value="0" aria-label="Progreso de la canción"><span id="duration">0:00</span></div>
+              <div class="music-buttons">
+                <button type="button" id="prevTrack" aria-label="Canción anterior">⏮</button>
+                <button type="button" id="playPause" aria-label="Reproducir o pausar">▶</button>
+                <button type="button" id="nextTrack" aria-label="Canción siguiente">⏭</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="mini-button" id="fullscreenToggle" type="button" aria-label="Pantalla completa">⛶</button>
+      </div>
+    </header>
+
+    <aside class="sidebar" aria-label="Navegación principal">
+      <button class="nav-item active" data-section="profile" title="Perfil"><span>✦</span></button>
+      <button class="nav-item" data-section="stats" title="Estadísticas"><span>◈</span></button>
+      <button class="nav-item" data-section="equipment" title="Items"><span>◇</span></button>
+      <button class="nav-item" data-section="friends" title="Personajes"><span>♢</span></button>
+      <button class="nav-item" data-section="gallery" title="Galería"><span>▧</span></button>
+      <button class="nav-item" data-section="messages" title="Mensajes"><span>☏</span></button>
+    </aside>
+
+    <section class="content-shell">
+      <div class="hero-panel panel" data-panel="profile">
+        <div class="hero-copy">
+          <span class="section-kicker">GELO · LV. 90 / 90</span>
+          <h2>Taiga.</h2>
+          <span class="section-kicker">UID: 90391591</span>
+          <span class="title-stars" aria-hidden="true"><span>✦</span><span>✦</span><span>✦</span><span>✦</span><span>✦</span><span>✦</span></span>
+          <p class="quote">“If this isn't enough to pave the way, then let the rivers and mountains be the proof of what I'm willing to wager.”</p>
+          <div class="tags">
+            <span>GEL0</span><span>ONLINE</span><span>穗穗</span>
+          </div>
+        </div>
+
+        <div class="jp-profile-main" aria-hidden="true">水<br>月<br>光<br>夢</div>
+        <div class="jp-profile-side" aria-hidden="true">青い海<br>静かな夜</div>
+        <div class="jp-profile-mini" aria-hidden="true">✦ しずく ✦　(｡･ω･｡)ﾉ♡</div>
+        <div class="decor-line decor-line-profile-a" aria-hidden="true"></div>
+        <div class="decor-line decor-line-profile-b" aria-hidden="true"></div>
+        <div class="jp-profile-extra" aria-hidden="true">波の音　静かな心　水の記憶</div>
+        <div class="jp-profile-kanji" aria-hidden="true">海<br>空<br>夢</div>
+
+        <div class="profile-video-wrap" aria-label="Animación de SuiSui">
+          <div class="profile-video-glow"></div>
+          <div class="profile-video-frame">
+            <video class="profile-video" autoplay muted loop playsinline preload="auto" aria-label="SuiSui en movimiento">
+              <source src="assets/video/suisui-profile.webm" type="video/webm">
+            </video>
+            <div class="profile-video-fallback" aria-hidden="true">
+              <span>SUISUI</span>
+              <small>Coloca aquí tu vídeo WEBM</small>
+            </div>
+          </div>
+          <span class="profile-video-label">MOMENT / LOOP</span>
+        </div>
+      </div>
+
+      <div class="panel-grid">
+        <section class="panel info-panel view-panel" data-panel="stats"><div class="view-character"><img src="assets/images/render-stats.png" alt="Render de SuiSui — Estadísticas" onerror="this.style.display='none'"></div>
+          <div class="panel-heading"><span>01</span><h3>Attribute details:</h3>
+            <span class="title-stars" aria-hidden="true"><span>✦</span><span>✦</span><span>✦</span><span>✦</span><span>✦</span><span>✦</span></span></div>
+          <div class="jp-decor jp-stats-main" aria-hidden="true">水光海夢</div><div class="jp-decor jp-stats-mini" aria-hidden="true">静波心空</div>
+          
+          <div class="jp-safe-copy jp-safe-copy-stats" aria-hidden="true">静かな力　✦　水の記憶</div>
+          <div class="decor-line decor-line-stats" aria-hidden="true"></div><div class="decor-line decor-line-stats-2" aria-hidden="true"></div><div class="stat-list">
+           <div class="stat-row"><div class="stat-label"><span>HP ✝</span><b>45,697</b></div><div class="stat-meter"><i style="width:100%"></i></div></div>
+            <div class="stat-row"><div class="stat-label"><span>ATK ⚔</span><b>1,125</b></div><div class="stat-meter"><i style="width:82%"></i></div></div>
+            <div class="stat-row"><div class="stat-label"><span>DEF 🛡</span><b>1,328</b></div><div class="stat-meter"><i style="width:74%"></i></div></div>
+            <div class="stat-row"><div class="stat-label"><span>Reg. of energy ⚡︎</span><b>261.4%</b></div><div class="stat-meter"><i style="width:91%"></i></div></div>
+            <div class="stat-row"><div class="stat-label"><span>Prob. CRIT ✗</span><b>26.3%</b></div><div class="stat-meter"><i style="width:48%"></i></div></div>
+            <div class="stat-row"><div class="stat-label"><span>Dam. CRIT !</span><b>251.0%</b></div><div class="stat-meter"><i style="width:88%"></i></div></div>
+          </div>
+        </section>
+
+        <section class="panel info-panel view-panel" data-panel="equipment"><div class="view-character"><img src="assets/images/render-items.png" alt="Render de SuiSui — Items" onerror="this.style.display='none'"></div>
+          <div class="panel-heading"><span>02</span><h3>Equipped items:</h3>
+            <span class="title-stars" aria-hidden="true"><span>✦</span><span>✦</span><span>✦</span><span>✦</span><span>✦</span><span>✦</span></span></div>
+          <div class="jp-decor jp-items-main" aria-hidden="true">氷<br>晶<br>月</div><div class="jp-decor jp-items-mini" aria-hidden="true">青<br>雫<br>光</div>
+          <div class="jp-items-copy jp-items-copy-top" aria-hidden="true">月影に宿る　青い記憶</div>
+          <div class="jp-items-copy jp-items-copy-bottom" aria-hidden="true">氷の輝き　✦　静かな共鳴　✦　水晶の夢</div>
+          <div class="gold-mark gold-mark-items" aria-hidden="true">✧</div>
+          <div class="jp-safe-copy jp-safe-copy-items" aria-hidden="true">青い夢　✦　氷の輝き</div>
+          <div class="decor-line decor-line-items" aria-hidden="true"></div><div class="decor-line decor-line-items-2" aria-hidden="true"></div><div class="item-list">
+            <div class="item-card"><img src="assets/images/items/item-01.png" alt=""><div><b>Basic Attack</b><small>Unraveled Spring</small></div><span>✦</span></div>
+            <div class="item-card"><img src="assets/images/items/item-02.png" alt=""><div><b>Resonance Skill</b><small>Vernal Screen</small></div><span>✦</span></div>
+            <div class="item-card"><img src="assets/images/items/item-03.png" alt=""><div><b>Resonance Liberation</b><small>Song of Thoroughfare ★★</small></div><span>✦</span></div>
+            <div class="item-card"><img src="assets/images/items/item-04.png" alt=""><div><b>Forte Circuit</b><small>Lambent Gold</small></div><span>✦</span></div>
+            <div class="item-card"><img src="assets/images/items/item-05.png" alt=""><div><b>Inherent Skill</b><small>Sky Over Water</small></div><span>✦</span></div>
+            <div class="item-card"><img src="assets/images/items/item-06.png" alt=""><div><b>Inherent Skill</b><small>Glimmering Gold</small></div><span>✦</span></div>
+            <div class="item-card"><img src="assets/images/items/item-07.png" alt=""><div><b>Intro Skill</b><small>Tinkling Jade</small></div><span>✦</span></div>
+            <div class="item-card"><img src="assets/images/items/item-08.png" alt=""><div><b>Outro Skill</b><small>Rippling Water</small></div><span>✦</span></div>
+            <div class="item-card"><img src="assets/images/items/item-09.png" alt=""><div><b>Node 6</b><small>Staying True To This</small></div><span>✦</span></div>
+          </div>
+        </section>
+
+        <section class="panel info-panel view-panel" data-panel="friends"><div class="view-character"><img src="assets/images/render-friends.png" alt="Render de SuiSui — Personajes" onerror="this.style.display='none'"></div>
+          <div class="panel-heading"><span>03</span><h3>Characters / Resonators:</h3>
+            <span class="title-stars" aria-hidden="true"><span>✦</span><span>✦</span><span>✦</span><span>✦</span><span>✦</span><span>✦</span></span></div>
+          
+          
+          
+          <div class="jp-decor jp-friends-bottom" aria-hidden="true">想い　♡　(˶ᵔ ᵕ ᵔ˶)　☆　またね　海の向こうで。</div>
+          <div class="jp-friends-side-right" aria-hidden="true">静かな海<br>青い光<br>大切な絆</div>
+          
+          <div class="decor-line decor-line-friends" aria-hidden="true"></div><div class="decor-line decor-line-friends-2" aria-hidden="true"></div><div class="friend-list">
+            <div class="friend"><img src="assets/images/avatar-01.png" alt=""><div class="friend-main"><b>Chisa</b><small><i></i> online</small><p>“Always under the same sky.”</p></div><a class="friend-link" href="friends/amiga-01.html" aria-label="Abrir Xatspace de Amiga 01" title="Abrir Xatspace">↗</a></div>
+            <div class="friend"><img src="assets/images/avatar-02.png" alt=""><div class="friend-main"><b>Jinhsi</b><small><i></i> online</small><p>“A smile also lights things up.”</p></div><a class="friend-link" href="friends/amiga-02.html" aria-label="Abrir Xatspace de Amiga 02" title="Abrir Xatspace">↗</a></div>
+            <div class="friend"><img src="assets/images/avatar-03.png" alt=""><div class="friend-main"><b>Hsin</b><small><i></i> ausente</small><p>“See you on the other side of the tide.</p></div><a class="friend-link" href="friends/amiga-03.html" aria-label="Abrir Xatspace de Amiga 03" title="Abrir Xatspace">↗</a></div>
+            <div class="friend"><img src="assets/images/avatar-04.png" alt=""><div class="friend-main"><b>Yangyang</b><small><i></i> online</small><p>“Small mementos, big stories.”</p></div><a class="friend-link" href="friends/amiga-04.html" aria-label="Abrir Xatspace de Amiga 04" title="Abrir Xatspace">↗</a></div>
+          </div>
+        </section>
+
+        <section class="panel info-panel gallery-panel view-panel" data-panel="gallery"><div class="view-character"><img src="assets/images/render-gallery.png" alt="Render de SuiSui — Galería" onerror="this.style.display='none'"></div>
+          <div class="panel-heading"><span>04</span><h3>Gallery:</h3>
+            <span class="title-stars" aria-hidden="true"><span>✦</span><span>✦</span><span>✦</span><span>✦</span><span>✦</span><span>✦</span></span></div>
+          <div class="jp-decor jp-gallery-main" aria-hidden="true">海<br>月<br>花</div><div class="jp-decor jp-gallery-mini" aria-hidden="true">記<br>憶</div>
+          <div class="jp-gallery-copy jp-gallery-copy-bottom" aria-hidden="true">水の記憶　✦　月の光　✦　忘れない瞬間　✦　青い夢</div>
+          <div class="jp-gallery-copy jp-gallery-copy-top" aria-hidden="true">思い出は、静かな波のように残る。</div>
+          <div class="gold-mark gold-mark-gallery" aria-hidden="true">◇</div>
+          <div class="jp-safe-copy jp-safe-copy-gallery" aria-hidden="true">思い出　✦　月影　✦　青い波</div>
+          <div class="decor-line decor-line-gallery" aria-hidden="true"></div><div class="decor-line decor-line-gallery-2" aria-hidden="true"></div><div class="gallery-grid">
+            <div class="gallery-slot"><img src="assets/images/gallery-01.png" alt=""><span>IMAGE 01</span></div>
+            <div class="gallery-slot"><img src="assets/images/gallery-02.png" alt=""><span>IMAGE 02</span></div>
+            <div class="gallery-slot"><img src="assets/images/gallery-03.png" alt=""><span>GIF 01</span></div>
+            <div class="gallery-slot"><img src="assets/images/gallery-04.png" alt=""><span>IMAGE 04</span></div>
+          </div>
+        </section>
+      </div>
+
+      <section class="panel about-panel view-panel" data-panel="messages"><div class="view-character"><img src="assets/images/render-messages.png" alt="Render de SuiSui — Messages" onerror="this.style.display='none'"></div>
+        <div>
+          <span class="section-kicker">PROFILE NOTE</span>
+          <h3>"Let the trade flows weave our victory."</h3>
+          <span class="title-stars" aria-hidden="true"><span>✦</span><span>✦</span><span>✦</span><span>✦</span><span>✦</span><span>✦</span></span>
+        </div>
+        <div class="jp-decor jp-messages-main" aria-hidden="true">想<br>い<br>出<br>の<br>海</div><div class="jp-decor jp-messages-side" aria-hidden="true">光<br>波<br>心<br>空</div><div class="jp-decor jp-messages-mini" aria-hidden="true">静かな夜<br>青い夢<br>小さな光</div><div class="decor-line decor-line-messages" aria-hidden="true"></div><p>The sound of water... I hear it. Not from the streams, or the falling rain, but from somewhere far deeper. A resonance that seeps from the core of every living thing, waking the hills, waking the waters, one by one.</p>
+      </section>
+    </section>
+
+    <!-- NOTIFICACIONES -->
+    <section class="notifications" id="notifications" aria-live="polite"></section>
+
+    <audio id="bgMusic" preload="auto">
+      <source src="assets/audio/music.mp3" type="audio/mpeg">
+    </audio>
+
+    <footer class="footer">
+      <span>Taiga's Space // By Nece</span>
+    </footer>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

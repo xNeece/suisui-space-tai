@@ -1,0 +1,2 @@
+Coloca aquí tu vídeo WEBM con el nombre exacto: suisui-profile.webm
+El index.html ya lo reproduce automáticamente en bucle, sin controles y en silencio para permitir autoplay.
