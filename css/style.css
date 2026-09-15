@@ -1076,19 +1076,23 @@ button {
    V1.4 — perfil limpio + vídeo WEBM + aparición de renders
    ========================================================= */
 
+/* Forzamos una proporción y un ancho controlado para la columna del medio */
 .hero-panel {
-  grid-template-columns: minmax(0, .9fr) minmax(300px, 1.2fr) minmax(260px, 1.05fr);
+  grid-template-columns: 1.1fr 0.8fr 1.1fr; /* Reducimos el espacio de la columna central */
 }
 
-/* Sustituye las antiguas estadísticas del perfil por un escenario para WEBM. */
 .profile-video-wrap {
-  position: relative;
+  position: relative !important;
   z-index: 3;
-  align-self: center;
-  justify-self: stretch;
-  min-width: 0;
-  padding: 14px 4px 22px;
-  animation: profileVideoAppear .95s cubic-bezier(.2,.8,.2,1) both;
+  right: 100px !important;
+  top: 200px !important;
+  width: 450px !important;       /* Ancho compacto forzado */
+  max-width: 550px !important;   /* Evita que se expanda */
+  min-width: 220px !important;   /* Evita que la grilla lo comprima */
+  margin: 0 auto !important;
+  justify-self: center !important;
+  align-self: center !important;
+  padding: 0 !important;
 }
 
 .profile-video-glow {
@@ -1104,13 +1108,12 @@ button {
 .profile-video-frame {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 5;
-  min-height: 300px;
+  aspect-ratio: 16 / 9; /* Mantiene el formato horizontal 16:9 perfecto */
   overflow: hidden;
   border: 1px solid rgba(157,232,223,.22);
-  border-radius: 22px;
+  border-radius: 16px; /* Ligeramente más redondeado para que se vea bien en pequeño */
   background: linear-gradient(145deg, rgba(157,232,223,.055), rgba(3,15,21,.58));
-  box-shadow: 0 20px 55px rgba(0,0,0,.30), inset 0 0 45px rgba(157,232,223,.035);
+  box-shadow: 0 15px 35px rgba(0,0,0,.30), inset 0 0 35px rgba(157,232,223,.035);
   backdrop-filter: blur(8px);
 }
 
